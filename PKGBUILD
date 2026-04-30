@@ -49,9 +49,8 @@ package_lib32-smbclient() {
   cp -rPf usr/lib/* "$pkgdir"/usr/lib32
   sed -i 's#/lib#/lib32#'\
     "$pkgdir"/usr/lib32/pkgconfig/netapi.pc \
-    "$pkgdir"/usr/lib32/pkgconfig/smbclient.pc \
-    "$pkgdir"/usr/lib32/pkgconfig/smbclient-raw.pc
-                           
+    "$pkgdir"/usr/lib32/pkgconfig/smbclient.pc
+    
   rm -rf "$pkgdir"/usr/lib32/cups # not a lib
 }
 
