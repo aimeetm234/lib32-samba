@@ -17,8 +17,8 @@ source=("$_urlprefix/smbclient-$pkgver-$pkgrel-i686.pkg.tar.zst"
         "$_urlprefix/libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst")
 noextract=(smbclient-$pkgver-$pkgrel-i686.pkg.tar.zst
            libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst)
-md5sums=('3931e7e6e6aaa19093ced35afb55c4f6'
-         '9d656c88b4ac4c709c65536623b322a7')
+md5sums=('c460b3019130aeb5fc8545b8637f0ed1'
+         '0cb6c4d89c6aca2749df831a143d4e14')
 
 package_lib32-libwbclient() {
   pkgdesc="Samba winbind client library (32 bits)"
