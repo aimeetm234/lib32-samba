@@ -7,16 +7,16 @@
 
 pkgbase=lib32-samba
 pkgname=(lib32-libwbclient lib32-smbclient)
-pkgver=4.2.1
-pkgrel=1
+pkgver=4.20.1
+pkgrel=1.0
 arch=('x86_64')
 url="http://www.samba.org"
 license=('GPL3')
 _urlprefix=https://mirror.archlinux32.org/i686/extra/
-source=("$_urlprefix/smbclient-$pkgver-$pkgrel-i686.pkg.tar.xz"
-        "$_urlprefix/libwbclient-$pkgver-$pkgrel-i686.pkg.tar.xz")
-noextract=(smbclient-$pkgver-$pkgrel-i686.pkg.tar.xz
-           libwbclient-$pkgver-$pkgrel-i686.pkg.tar.xz)
+source=("$_urlprefix/smbclient-$pkgver-$pkgrel-i686.pkg.tar.zst"
+        "$_urlprefix/libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst")
+noextract=(smbclient-$pkgver-$pkgrel-i686.pkg.tar.zst
+           libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst)
 md5sums=('3931e7e6e6aaa19093ced35afb55c4f6'
          '9d656c88b4ac4c709c65536623b322a7')
 
@@ -26,7 +26,7 @@ package_lib32-libwbclient() {
   
   rm -rf libwbclient && mkdir libwbclient
   cd libwbclient  
-  tar xf ../libwbclient-$pkgver-$pkgrel-i686.pkg.tar.xz usr/lib
+  tar xf ../libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst usr/lib
   
   mkdir -p "$pkgdir"/usr/lib32
   cp -rPf usr/lib/* "$pkgdir"/usr/lib32
@@ -43,7 +43,7 @@ package_lib32-smbclient() {
          
   rm -rf smbclient && mkdir smbclient
   cd smbclient  
-  tar xf ../smbclient-$pkgver-$pkgrel-i686.pkg.tar.xz usr/lib
+  tar xf ../smbclient-$pkgver-$pkgrel-i686.pkg.tar.zst usr/lib
   
   mkdir -p "$pkgdir"/usr/lib32
   cp -rPf usr/lib/* "$pkgdir"/usr/lib32
