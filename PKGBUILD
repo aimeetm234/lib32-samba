@@ -12,7 +12,7 @@ pkgrel=1
 arch=('x86_64')
 url="http://www.samba.org"
 license=('GPL3')
-_urlprefix=http://mirrors.kernel.org/archlinux/extra/os/i686
+_urlprefix=https://mirror.archlinux32.org/i686/extra/
 source=("$_urlprefix/smbclient-$pkgver-$pkgrel-i686.pkg.tar.xz"
         "$_urlprefix/libwbclient-$pkgver-$pkgrel-i686.pkg.tar.xz")
 noextract=(smbclient-$pkgver-$pkgrel-i686.pkg.tar.xz
