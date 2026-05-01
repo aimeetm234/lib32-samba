@@ -22,6 +22,7 @@ md5sums=('c460b3019130aeb5fc8545b8637f0ed1'
 depends=('lib32-tdb' 'lib32-gnutls' 'lib32-glibc' 'lib32-talloc' 'lib32-libcap'
            'lib32-libgcrypt' 'lib32-libcups' 'lib32-pam' 'lib32-avahi' 'lib32-systemd' 
            'lib32-acl' 'lib32-libbsd' "smbclient>=$pkgver" "libwbclient>=$pkgver")
+makedepends=('git')
 
 package_lib32-libwbclient() {
   pkgdesc="Samba winbind client library (32 bits)"
@@ -43,6 +44,12 @@ package_lib32-smbclient() {
            'lib32-libwbclient' 'lib32-libgcrypt' 'lib32-libcups'
            'lib32-pam' 'lib32-avahi' 'lib32-systemd' 'lib32-acl'
            "smbclient>=$pkgver")
+
+  rm -rf lib32-talloc && mkdir lib32-talloc
+  git clone --depth 1 https://aur.archlinux.org/lib32-talloc.git
+  cd lib32-talloc
+  makepkg -si
+  cd ..
          
   rm -rf smbclient && mkdir smbclient
   cd smbclient  
