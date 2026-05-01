@@ -23,7 +23,15 @@ md5sums=('c460b3019130aeb5fc8545b8637f0ed1'
 package_lib32-libwbclient() {
   pkgdesc="Samba winbind client library (32 bits)"
   depends=('lib32-libbsd' 'lib32-glibc' "libwbclient>=$pkgver")
-  
+
+  if pacman -Qi lib32-libbsd > /dev/null 2>&1; then
+     rm -rf lib32-libbsd
+     git clone --depth 1 https://aur.archlinux.org/lib32-libbsd.git
+     cd lib32-libbsd
+     makepkg -si
+     cd ..
+  fi
+
   rm -rf libwbclient && mkdir libwbclient
   cd libwbclient  
   tar xf ../libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst usr/lib
