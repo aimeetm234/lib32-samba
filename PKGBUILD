@@ -19,18 +19,13 @@ noextract=(smbclient-$pkgver-$pkgrel-i686.pkg.tar.zst
            libwbclient-$pkgver-$pkgrel-i686.pkg.tar.zst)
 md5sums=('c460b3019130aeb5fc8545b8637f0ed1'
          '0cb6c4d89c6aca2749df831a143d4e14')
+depends=('lib32-tdb' 'lib32-gnutls' 'lib32-glibc' 'lib32-talloc' 'lib32-libcap'
+           'lib32-libgcrypt' 'lib32-libcups' 'lib32-pam' 'lib32-avahi' 'lib32-systemd' 
+           'lib32-acl' 'lib32-libbsd' "smbclient>=$pkgver" "libwbclient>=$pkgver")
 
 package_lib32-libwbclient() {
   pkgdesc="Samba winbind client library (32 bits)"
   depends=('lib32-libbsd' 'lib32-glibc' "libwbclient>=$pkgver")
-
-  if pacman -Qi lib32-libbsd > /dev/null 2>&1; then
-     rm -rf lib32-libbsd
-     git clone --depth 1 https://aur.archlinux.org/lib32-libbsd.git
-     cd lib32-libbsd
-     makepkg -si
-     cd ..
-  fi
 
   rm -rf libwbclient && mkdir libwbclient
   cd libwbclient  
