@@ -1,4 +1,5 @@
 # Maintainer: josephgbr <rafael.f.f1@gmail.com>
+# Contributor: aimeetm234 <https://github.com/aimeetm234>
 
 # How to update?
 # 'pkgver' and 'pkgrel' has to be same as in 'smbclient'
